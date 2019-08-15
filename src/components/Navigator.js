@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import {
@@ -6,14 +6,22 @@ import {
   LogoContainer,
   Logo,
   Navigation,
-  Select,
+  Dropdown,
   HomeLink,
-  SelectOption
+  DropdownBox,
+  DropdownContainer,
+  DropdownOption
 } from './NavigatorStyles'
 
 import LogoIcon from '../images/pubg.png'
 
 export default function Navigator({ handleClick }) {
+  const [toggle, setToggle] = useState(false)
+
+  const handleToggle = () => {
+    setToggle(!toggle)
+  }
+
   return (
     <Navbar>
       <Link to="/">
@@ -25,29 +33,32 @@ export default function Navigator({ handleClick }) {
         <Link to="/" className="link">
           <HomeLink>Home</HomeLink>
         </Link>
-        <Select onChange={handleClick}>
-          <SelectOption selected disabled>
+        <DropdownContainer>
+          <Dropdown onClick={() => handleToggle()}>
             Leaderboards
-          </SelectOption>
-          <SelectOption value="duo" onClick={e => handleClick(e)}>
-            Duo
-          </SelectOption>
-          <SelectOption value="duo-fpp" onClick={e => handleClick(e)}>
-            Duo FPP
-          </SelectOption>
-          <SelectOption value="solo" onClick={e => handleClick(e)}>
-            Solo
-          </SelectOption>
-          <SelectOption value="solo-fpp" onClick={e => handleClick(e)}>
-            Solo FPP
-          </SelectOption>
-          <SelectOption value="squad" onClick={e => handleClick(e)}>
-            Squad
-          </SelectOption>
-          <SelectOption value="squad-fpp" onClick={e => handleClick(e)}>
-            Squad FPP
-          </SelectOption>
-        </Select>
+            <i className="fas fa-caret-down" />
+          </Dropdown>
+          <DropdownBox show={toggle}>
+            <DropdownOption onClick={() => handleClick('duo')}>
+              Duo
+            </DropdownOption>
+            <DropdownOption onClick={() => handleClick('duo-fpp')}>
+              Duo FPP
+            </DropdownOption>
+            <DropdownOption onClick={() => handleClick('solo')}>
+              Solo
+            </DropdownOption>
+            <DropdownOption onClick={() => handleClick('solo-fpp')}>
+              Solo FPP
+            </DropdownOption>
+            <DropdownOption onClick={() => handleClick('squad')}>
+              Squad
+            </DropdownOption>
+            <DropdownOption onClick={() => handleClick('squad-fpp')}>
+              Squad FPP
+            </DropdownOption>
+          </DropdownBox>
+        </DropdownContainer>
       </Navigation>
     </Navbar>
   )

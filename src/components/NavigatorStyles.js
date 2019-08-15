@@ -49,31 +49,50 @@ const Navigation = styled.div`
   font-family: 'Teko';
 `
 
-const Select = styled.select`
-  border: none;
-  box-shadow: none;
+const Dropdown = styled.div`
   cursor: pointer;
-  background-color: transparent;
-  outline-style: none;
-  color: white;
-  font-size: 32px;
-  text-transform: uppercase;
-  font-family: 'Teko';
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & i {
+    font-size: 22px;
+    margin: 0 0 5px 5px;
+  }
 `
 
 const HomeLink = styled.div`
   margin: 0 30px;
 `
 
-const SelectOption = styled.option`
-  background-color: var(--orange);
+const DropdownOption = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  padding-bottom: 1px solid rgba(0, 0, 0, 0.25);
   cursor: pointer;
 
-  ${props =>
-    props.selected &&
-    `
-    display: none
-  `}
+  &:hover {
+    background-color: #252525;
+  }
+`
+
+const DropdownBox = styled.div`
+  background-color: var(--orange);
+  width: 159px;
+  height: max-content;
+  display: none;
+  position: absolute;
+  margin-top: 50px;
+
+  ${props => props.show && `display: block`}
+`
+
+const DropdownContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export {
@@ -81,7 +100,9 @@ export {
   LogoContainer,
   Logo,
   Navigation,
-  Select,
+  Dropdown,
   HomeLink,
-  SelectOption
+  DropdownOption,
+  DropdownBox,
+  DropdownContainer
 }
