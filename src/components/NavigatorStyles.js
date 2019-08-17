@@ -65,6 +65,10 @@ const Dropdown = styled.div`
 
 const HomeLink = styled.div`
   margin: 0 30px;
+
+  &:hover {
+    color: var(--orange);
+  }
 `
 
 const DropdownOption = styled.div`
@@ -86,8 +90,13 @@ const DropdownBox = styled.div`
   display: none;
   position: absolute;
   margin-top: 50px;
+  user-select: none;
+  transform: translateY(-100%);
 
-  ${props => props.show && `display: block`}
+  ${props => props.show && `
+    display: block; 
+    transform: translateY(0);
+  `}
 `
 
 const DropdownContainer = styled.div`

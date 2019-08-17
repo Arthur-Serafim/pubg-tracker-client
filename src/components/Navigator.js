@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import {
   Navbar,
@@ -24,15 +24,15 @@ export default function Navigator({ handleClick }) {
 
   return (
     <Navbar>
-      <Link to="/">
+      <NavLink to="/">
         <LogoContainer>
           <Logo src={LogoIcon} />
         </LogoContainer>
-      </Link>
+      </NavLink>
       <Navigation>
-        <Link to="/" className="link">
+        <NavLink active="active" to="/" className="link">
           <HomeLink>Home</HomeLink>
-        </Link>
+        </NavLink>
         <DropdownContainer>
           <Dropdown onClick={() => handleToggle()}>
             Leaderboards

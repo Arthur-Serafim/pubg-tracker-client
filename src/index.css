@@ -2,6 +2,8 @@
 
 :root {
   --orange: #F2A900;
+  --purple: #5555AA;
+  --green: #3BA149;
 }
 
 body {
@@ -21,4 +23,8 @@ code {
 .link {
   text-decoration: none;
   color: inherit;
+}
+
+.active {
+  color: var(--orange);
 }
