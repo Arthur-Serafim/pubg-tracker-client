@@ -66,7 +66,6 @@ export default function Home(props) {
 
   const handlePlatformChange = e => {
     setPlatform(e)
-    console.log(platform)
   }
 
   const handleSubmit = e => {

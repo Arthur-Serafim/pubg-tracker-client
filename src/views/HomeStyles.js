@@ -8,6 +8,20 @@ const Container = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 60px;
   grid-template-areas: 'image search' 'footer footer';
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-rows: 1fr 45px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 600px 45px;
+    grid-template-areas: 'image' 'search' 'footer';
+  }
+
+  @media only screen and (max-width: 550px) {
+    grid-template-rows: 400px 500px 30px;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -21,6 +35,10 @@ const ImageContainer = styled.div`
   background-repeat: no-repeat;
   background-position-x: start;
   background-position-y: center;
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-rows: 75px 1fr;
+  }
 `
 
 const FormContainer = styled.div`
@@ -34,11 +52,35 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (max-width: 550px) {
+    padding: 20px;
+  }
 `
 
 const FormTitle = styled.span`
   font-size: 62px;
   color: white;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 48px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 950px) {
+    font-size: 44px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 38px;
+  }
+
+  @media only screen and (max-width: 430px) {
+    font-size: 30px;    
+  }
 
   ${props =>
     props.purple &&
@@ -59,6 +101,16 @@ const Form = styled.div`
   grid-template-areas: 'selector' 'input';
   border: 1px solid white;
   overflow: hidden;
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-rows: 75px 1fr;
+    height: 400px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    grid-template-rows: 60px 1fr;
+    height: 350px;
+  }
 `
 
 const FormSelector = styled.div`
@@ -76,20 +128,52 @@ const FormSelector = styled.div`
   box-sizing: border-box;
   transition: all .3s;
 
+  @media only screen and (max-width: 1400px) {
+    grid-template-columns: 75px 75px 1fr;  
+  }
+
+  @media only screen and (max-width: 1250px) {
+    grid-template-columns: 60px 60px 1fr;  
+  }
+
   ${props =>
     props.active === 'psn' &&
     `
     grid-template-columns: 1fr 100px 100px;
+    
+    @media only screen and (max-width: 1400px) {
+      grid-template-columns: 1fr 75px 75px;  
+    }
+
+    @media only screen and (max-width: 1250px) {
+      grid-template-columns: 1fr 60px 60px;  
+    }
   `}
   ${props =>
     props.active === 'xbox' &&
     `
     grid-template-columns: 100px 1fr 100px;
+
+    @media only screen and (max-width: 1400px) {
+      grid-template-columns: 75px 1fr 75px;  
+    }
+
+    @media only screen and (max-width: 1250px) {
+      grid-template-columns: 60px 1fr 60px;  
+    }
   `}
   ${props =>
     props.active === 'steam' &&
     `
     grid-template-columns: 100px 100px 1fr;
+
+    @media only screen and (max-width: 1400px) {
+      grid-template-columns: 75px 75px 1fr;  
+    }
+    
+    @media only screen and (max-width: 1250px) {
+      grid-template-columns: 60px 60px 1fr;  
+    }
   `}
 `
 
@@ -104,6 +188,16 @@ const FormPlatform = styled.div`
   & img {
     height: 60px;
     width: 60px;
+
+    @media only screen and (max-width: 1400px) {
+      height: 45px;
+      width: 45px; 
+    }
+
+    @media only screen and (max-width: 1250px) {
+      height: 30px;
+      width: 30px; 
+    }
   }
 
   ${props =>
@@ -138,6 +232,22 @@ const FormDescription = styled.span`
     `
     display: block;
   `}
+
+  @media only screen and (max-width: 1650px) {
+    font-size: 32px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 1075px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 430px) {
+    font-size: 16px;    
+  }
 `
 
 const FormInputArea = styled.div`
@@ -151,6 +261,18 @@ const FormInputArea = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 42px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 36px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    padding: 15px;
+  }
 `
 
 const FormInputContainer = styled.form`
@@ -175,6 +297,14 @@ const FormInput = styled.input`
   box-shadow: none;
   font-family: 'Teko';
   outline-color: ${props => props.color};
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 22px;
+  }
 `
 
 const FormSubmit = styled.button`
@@ -190,6 +320,14 @@ const FormSubmit = styled.button`
 
   &:hover {
     opacity: 0.9;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    font-size: 22px;
   }
 `
 

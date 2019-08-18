@@ -10,6 +10,10 @@ const Navbar = styled.div`
   grid-template-columns: 150px 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: 'logo navigation';
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-columns: 100px 1fr;
+  }
 `
 
 const LogoContainer = styled.div`
@@ -29,11 +33,24 @@ const LogoContainer = styled.div`
   &:hover {
     border-bottom: 5px solid white;
   }
+
+  @media only screen and (max-width: 1400px) {
+    border-bottom: 3px solid var(--orange);
+
+    &:hover {
+      border-bottom: 3px solid white;
+    }
+  }
 `
 
 const Logo = styled.img`
   height: 89px;
   width: 89px;
+
+  @media only screen and (max-width: 1400px) {
+    height: 70px;
+    width: 70px;
+  }
 `
 
 const Navigation = styled.div`
@@ -47,6 +64,10 @@ const Navigation = styled.div`
   font-size: 32px;
   text-transform: uppercase;
   font-family: 'Teko';
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 26px;
+  }
 `
 
 const Dropdown = styled.div`
@@ -60,6 +81,10 @@ const Dropdown = styled.div`
   & i {
     font-size: 22px;
     margin: 0 0 5px 5px;
+
+    @media only screen and (max-width: 1400px) {
+      font-size: 18px;
+    }
   }
 `
 
@@ -93,7 +118,9 @@ const DropdownBox = styled.div`
   user-select: none;
   transform: translateY(-100%);
 
-  ${props => props.show && `
+  ${props =>
+    props.show &&
+    `
     display: block; 
     transform: translateY(0);
   `}

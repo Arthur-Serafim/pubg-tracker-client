@@ -15,4 +15,12 @@ export const FooterContainer = styled.div`
   & span {
     margin: 0 15px;
   }
+
+  @media only screen and (max-width: 1400px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    font-size: 16px;
+  }
 `
