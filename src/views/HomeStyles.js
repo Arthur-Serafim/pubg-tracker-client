@@ -33,15 +33,17 @@ const FormContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `
 
 const FormTitle = styled.span`
   font-size: 62px;
   color: white;
 
-  ${props => props.purple && `
+  ${props =>
+    props.purple &&
+    `
     color: var(--purple);
-    margin: 15px 0;
   `}
 `
 
@@ -50,12 +52,11 @@ const Form = styled.div`
   height: 500px;
   background-color: #252525;
   justify-self: flex-end;
-  
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr;
   grid-template-areas: 'selector' 'input';
-  border-radius: 5px;
   border: 1px solid white;
   overflow: hidden;
 `
@@ -75,13 +76,19 @@ const FormSelector = styled.div`
   box-sizing: border-box;
   transition: all .3s;
 
-  ${props => props.active === 'psn' && `
+  ${props =>
+    props.active === 'psn' &&
+    `
     grid-template-columns: 1fr 100px 100px;
   `}
-  ${props => props.active === 'xbox' && `
+  ${props =>
+    props.active === 'xbox' &&
+    `
     grid-template-columns: 100px 1fr 100px;
   `}
-  ${props => props.active === 'steam' && `
+  ${props =>
+    props.active === 'steam' &&
+    `
     grid-template-columns: 100px 100px 1fr;
   `}
 `
@@ -99,17 +106,23 @@ const FormPlatform = styled.div`
     width: 60px;
   }
 
-  ${props => props.psn && `
+  ${props =>
+    props.psn &&
+    `
     grid-area: psn;
     background-color: var(--purple);
     border-right: 1px solid white;
   `}
-  ${props => props.xbox && `
+  ${props =>
+    props.xbox &&
+    `
     grid-area: xbox;
     background-color: var(--green);
     border-right: 1px solid white;
   `}
-  ${props => props.steam && `
+  ${props =>
+    props.steam &&
+    `
     grid-area: steam;
     background-color: #252525;
   `}
@@ -120,9 +133,77 @@ const FormDescription = styled.span`
   color: white;
   display: none;
 
-  ${props => props.show && `
+  ${props =>
+    props.show &&
+    `
     display: block;
-  ` }
+  `}
 `
 
-export { FormContainer, ImageContainer, Container, FormTitle, Form, FormSelector, FormPlatform, FormDescription }
+const FormInputArea = styled.div`
+  grid-area: input;
+  height: 100%;
+  width: 100%;
+  color: ${props => props.color};
+  font-size: 48px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+`
+
+const FormInputContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+`
+
+const FormInput = styled.input`
+  width: 100%;
+  height: 60px;
+  background-color: #111;
+  border-radius: 5px;
+  color: #e5e5e5;
+  font-size: 32px;
+  padding: 7px 15px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  border: none;
+  box-shadow: none;
+  font-family: 'Teko';
+  outline-color: ${props => props.color};
+`
+
+const FormSubmit = styled.button`
+  font-size: 32px;
+  color: ${props => (props.color === 'white' ? '#252525' : 'white')};
+  background-color: ${props => props.color};
+  padding: 7px 15px;
+  border-radius: 5px;
+  box-shadow: none;
+  font-family: 'Teko';
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`
+
+export {
+  FormContainer,
+  ImageContainer,
+  Container,
+  FormTitle,
+  Form,
+  FormSelector,
+  FormPlatform,
+  FormDescription,
+  FormInputArea,
+  FormInputContainer,
+  FormInput,
+  FormSubmit
+}
