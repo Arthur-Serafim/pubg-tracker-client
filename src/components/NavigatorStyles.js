@@ -14,6 +14,8 @@ const Navbar = styled.div`
   @media only screen and (max-width: 1400px) {
     grid-template-columns: 100px 1fr;
   }
+
+  ${props => props.solid && `background-color: #252525`}
 `
 
 const LogoContainer = styled.div`
@@ -41,6 +43,9 @@ const LogoContainer = styled.div`
       border-bottom: 3px solid white;
     }
   }
+
+  ${props => props.solid && `background-color: #111111`}
+
 `
 
 const Logo = styled.img`

@@ -115,6 +115,7 @@ export default function Home(props) {
                 value={user}
                 onChange={e => handleInputChange(e)}
                 placeholder={`Enter ${platform} username`}
+                required
               />
               <div>
                 <FormSubmit color={color} type="submit">
