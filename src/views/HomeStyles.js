@@ -104,12 +104,10 @@ const Form = styled.div`
 
   @media only screen and (max-width: 1400px) {
     grid-template-rows: 75px 1fr;
-    height: 400px;
   }
 
   @media only screen and (max-width: 1250px) {
     grid-template-rows: 60px 1fr;
-    height: 350px;
   }
 `
 
@@ -331,6 +329,11 @@ const FormSubmit = styled.button`
   }
 `
 
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export {
   FormContainer,
   ImageContainer,
@@ -343,5 +346,6 @@ export {
   FormInputArea,
   FormInputContainer,
   FormInput,
-  FormSubmit
+  FormSubmit,
+  TitleWrapper
 }

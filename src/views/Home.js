@@ -13,7 +13,8 @@ import {
   FormInputContainer,
   FormInput,
   FormInputArea,
-  FormSubmit
+  FormSubmit,
+  TitleWrapper
 } from './HomeStyles'
 import Steam from '../images/steam.svg'
 import Psn from '../images/playstation.svg'
@@ -83,8 +84,10 @@ export default function Home(props) {
         <Navigator handleClick={handleClick} />
       </ImageContainer>
       <FormContainer>
-        <FormTitle>PlayersUnknown's Battleground</FormTitle>
-        <FormTitle purple>Stats Viewer</FormTitle>
+        <TitleWrapper>
+          <FormTitle>PlayersUnknown's Battleground</FormTitle>
+          <FormTitle purple>Stats Viewer</FormTitle>
+        </TitleWrapper>
         <Form>
           <FormSelector active={showPlatform}>
             <FormPlatform psn onClick={() => handlePlatformChange('psn')}>
