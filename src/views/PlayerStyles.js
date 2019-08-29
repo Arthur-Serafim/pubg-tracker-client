@@ -5,8 +5,16 @@ const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas: 'navbar' 'view';
+  grid-template-rows: 100px 1fr 60px;
+  grid-template-areas: 'navbar' 'view' 'footer';
+
+  @media only screen and (max-width: 1400px) {
+    grid-template-rows: 80px 1fr;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-rows: 60px 1fr;
+  }
 ` 
 
 const View = styled.div`
@@ -24,6 +32,11 @@ const View = styled.div`
   align-items: center;
   box-sizing: border-box;
   padding: 30px;
+
+  @media only screen and (max-width: 850px) {
+    padding: 0;
+    padding-top: 15px;
+  }
 `
 
 const PlayerHeader = styled.div`
@@ -33,6 +46,12 @@ const PlayerHeader = styled.div`
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 `
 
 const PlayerName = styled.span`
@@ -40,6 +59,26 @@ const PlayerName = styled.span`
   font-weight: 400;
   font-size: 40px;
   color: var(--orange);
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 32px;  
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: 18px;
+  }
 `
 
 const ModeSelector = styled.div`
@@ -48,6 +87,26 @@ const ModeSelector = styled.div`
   align-items: center;
   justify-content: space-evenly;
   font-size: 32px;
+  
+  @media only screen and (max-width: 1300px) {
+    font-size: 26px;  
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: 10px;
+  }
 `
 
 const ModeOption = styled.span`
@@ -70,7 +129,6 @@ const PlayerStats = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-bottom: 0;
   box-sizing: border-box;
 `
 
@@ -85,6 +143,21 @@ const PlayerHistory = styled.div`
   justify-content: space-between;
   margin-bottom: 20px;
   text-transform: capitalize;
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 26px; 
+    margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
 `
 
 export {

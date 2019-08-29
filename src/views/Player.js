@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import NavigatorSolid from '../components/NavigatorSolid'
+import Footer from '../components/Footer'
 import { 
   Container, 
   View, 
@@ -31,7 +32,6 @@ export default function Player(props) {
           platform,
           username
         })
-        console.log(res.data.attributes)
         setUser(res.data.attributes)
         setLoaded(true)
       } catch (err) {
@@ -44,7 +44,6 @@ export default function Player(props) {
 
   const handleGamemodeChange = e => {
     setGamemode(e)
-    console.log(e)
   }
 
   if (loaded) {
@@ -98,13 +97,16 @@ export default function Player(props) {
             </>
           )}
         </View>
+        <Footer />
       </Container>
     )
   } else {
     return (
       <Container>
         <NavigatorSolid solid={true} handleClick={handleClick} />
-        <View />
+        <View>
+          <div className="loading" />
+        </View>
       </Container>
     )
   }

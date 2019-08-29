@@ -55,6 +55,11 @@ const Logo = styled.img`
     height: 70px;
     width: 70px;
   }
+
+  @media only screen and (max-width: 1000px) {
+    height: 50px;
+    width: 50px;
+  }
 `
 
 const Navigation = styled.div`
@@ -72,6 +77,18 @@ const Navigation = styled.div`
   @media only screen and (max-width: 1400px) {
     font-size: 26px;
   }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 
 const Dropdown = styled.div`
@@ -88,6 +105,18 @@ const Dropdown = styled.div`
 
     @media only screen and (max-width: 1400px) {
       font-size: 18px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      font-size: 14px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 12px;
     }
   }
 `

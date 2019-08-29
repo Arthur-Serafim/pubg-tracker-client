@@ -15,6 +15,10 @@ const Navbar = styled.div`
     grid-template-columns: 100px 1fr;
   }
 
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 80px 1fr;
+  }
+
   ${props => props.solid && `background-color: #252525`}
 `
 
@@ -56,6 +60,11 @@ const Logo = styled.img`
     height: 70px;
     width: 70px;
   }
+
+  @media only screen and (max-width: 1000px) {
+    height: 50px;
+    width: 50px;
+  }
 `
 
 const Navigation = styled.div`
@@ -72,6 +81,10 @@ const Navigation = styled.div`
 
   @media only screen and (max-width: 1400px) {
     font-size: 26px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 22px;
   }
 `
 
