@@ -28,7 +28,7 @@ export default function Player(props) {
   useEffect(() => {
     ;(async () => {
       try {
-        const res = await axios.post('http://localhost:5000/api/players', {
+        const res = await axios.post('https://murmuring-lowlands-38302.herokuapp.com/api/players', {
           platform,
           username
         })

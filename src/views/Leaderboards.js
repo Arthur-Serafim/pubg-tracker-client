@@ -37,7 +37,7 @@ export default function Leaderboards(props) {
     setLoaded(false)
     ;(async () => {
       try {
-        const res = await axios.post('http://localhost:5000/api/leaderboards', {
+        const res = await axios.post('https://murmuring-lowlands-38302.herokuapp.com/api/leaderboards', {
           game_mode: gameMode
         })
         console.log(res.data)
@@ -60,7 +60,8 @@ export default function Leaderboards(props) {
             {modes.map(mode => (
               <ModeOption
                 active={gameMode === mode}
-                onClick={() => handleClick(mode)}>
+                onClick={() => handleClick(mode)}
+                key={Math.random()}>
                 {mode}
               </ModeOption>
             ))}

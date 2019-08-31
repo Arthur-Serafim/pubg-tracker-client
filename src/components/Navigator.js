@@ -41,7 +41,9 @@ export default function Navigator({ handleClick }) {
           </Dropdown>
           <DropdownBox show={toggle}>
             {modes.map(mode => (
-              <DropdownOption onClick={() => {
+              <DropdownOption
+              key={Math.random()}
+              onClick={() => {
                 handleClick(mode)
                 setToggle(false)
               }}>
