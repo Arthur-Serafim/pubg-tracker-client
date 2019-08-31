@@ -17,6 +17,7 @@ import LogoIcon from '../images/pubg.png'
 
 export default function Navigator({ handleClick }) {
   const [toggle, setToggle] = useState(false)
+  const modes = ['solo', 'solo-fpp', 'duo', 'duo-fpp', 'squad', 'squad-fpp',]
 
   const handleToggle = () => {
     setToggle(!toggle)
@@ -39,24 +40,14 @@ export default function Navigator({ handleClick }) {
             <i className="fas fa-caret-down" />
           </Dropdown>
           <DropdownBox show={toggle}>
-            <DropdownOption onClick={() => handleClick('duo')}>
-              Duo
-            </DropdownOption>
-            <DropdownOption onClick={() => handleClick('duo-fpp')}>
-              Duo FPP
-            </DropdownOption>
-            <DropdownOption onClick={() => handleClick('solo')}>
-              Solo
-            </DropdownOption>
-            <DropdownOption onClick={() => handleClick('solo-fpp')}>
-              Solo FPP
-            </DropdownOption>
-            <DropdownOption onClick={() => handleClick('squad')}>
-              Squad
-            </DropdownOption>
-            <DropdownOption onClick={() => handleClick('squad-fpp')}>
-              Squad FPP
-            </DropdownOption>
+            {modes.map(mode => (
+              <DropdownOption onClick={() => {
+                handleClick(mode)
+                setToggle(false)
+              }}>
+                {mode}
+              </DropdownOption>
+            ))}
           </DropdownBox>
         </DropdownContainer>
       </Navigation>

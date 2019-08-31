@@ -62,6 +62,9 @@ export default function Player(props) {
       'roundsPlayed'
     ]
 
+    const modes = ['solo', 'solo-fpp', 'duo', 'duo-fpp', 'squad', 'squad-fpp',]
+
+
     return (
       <Container>
         <NavigatorSolid solid={true} handleClick={handleClick} />
@@ -75,36 +78,13 @@ export default function Player(props) {
               <PlayerHeader>
                 <PlayerName>{user.name}</PlayerName>
                 <ModeSelector>
-                  <ModeOption
-                    active={gamemode === 'solo'}
-                    onClick={() => handleGamemodeChange('solo')}>
-                    SOLO
-                  </ModeOption>
-                  <ModeOption
-                    active={gamemode === 'solo-fpp'}
-                    onClick={() => handleGamemodeChange('solo-fpp')}>
-                    SOLO FPP
-                  </ModeOption>
-                  <ModeOption
-                    active={gamemode === 'duo'}
-                    onClick={() => handleGamemodeChange('duo')}>
-                    DUO
-                  </ModeOption>
-                  <ModeOption
-                    active={gamemode === 'duo-fpp'}
-                    onClick={() => handleGamemodeChange('duo-fpp')}>
-                    DUO FPP
-                  </ModeOption>
-                  <ModeOption
-                    active={gamemode === 'squad'}
-                    onClick={() => handleGamemodeChange('squad')}>
-                    SQUAD
-                  </ModeOption>
-                  <ModeOption
-                    active={gamemode === 'squad-fpp'}
-                    onClick={() => handleGamemodeChange('squad-fpp')}>
-                    SQUAD FPP
-                  </ModeOption>
+                  {modes.map(mode => (
+                    <ModeOption
+                      active={gamemode === mode}
+                      onClick={() => handleGamemodeChange(mode)}>
+                      {mode}
+                    </ModeOption>
+                  ))}
                 </ModeSelector>
               </PlayerHeader>
               <PlayerStats>

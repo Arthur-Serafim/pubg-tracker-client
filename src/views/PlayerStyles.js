@@ -22,9 +22,10 @@ const View = styled.div`
   height: 100%;
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('https://hdqwalls.com/download/pubg-poster-art-4k-gb-2560x1700.jpg');
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: end;
   color: white;
   display: flex;
   flex-direction: column;
@@ -96,8 +97,8 @@ const ModeSelector = styled.div`
     font-size: 20px;
   }
 
-  @media only screen and (max-width: 460px) {
-    font-size: 16px;
+  @media only screen and (max-width: 475px) {
+    font-size: 15px;
   }
 
   @media only screen and (max-width: 400px) {
@@ -112,6 +113,7 @@ const ModeSelector = styled.div`
 const ModeOption = styled.span`
   margin-right: 25px;
   cursor: pointer;
+  text-transform: uppercase;
 
   &:hover {
     color: var(--orange);

@@ -15,17 +15,19 @@ const Container = styled.div`
   @media only screen and (max-width: 1000px) {
     grid-template-rows: 60px 1fr;
   }
-`
+` 
 
 const View = styled.div`
   grid-area: view;
-  height: 100%;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://hdqwalls.com/download/pubg-poster-art-4k-gb-2560x1700.jpg');
+  height: 100%; 
+
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('https://hdqwalls.com/download/pubg-poster-art-4k-gb-2560x1700.jpg');
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: end;
+
   color: white;
   display: flex;
   flex-direction: column;
@@ -40,4 +42,159 @@ const View = styled.div`
   }
 `
 
-export { Container, View }
+const PlayerHeader = styled.div`
+  width: 100%;
+  background-color: #111;
+  padding: 20px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+`
+
+const PlayerName = styled.span`
+  color: white;
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--orange);
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 32px;  
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 26px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    font-size: 22px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: 18px;
+  }
+`
+
+const ModeSelector = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 32px;
+  
+  @media only screen and (max-width: 1300px) {
+    font-size: 26px;  
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width: 475px) {
+    font-size: 15px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: 10px;
+  }
+`
+
+const ModeOption = styled.span`
+  margin-right: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--orange);
+  }
+
+  ${props => props.active && `
+    color: var(--orange);
+  `}
+`
+
+const PlayerStats = styled.div`
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  ${props => props.loading && `
+    height: 60vh;
+    justify-content: center;
+  `}
+`
+
+const PlayerHistory = styled.div`
+  width: 100%;
+  background-color: #5E5D53;
+  padding: 5px 10px;
+  font-size: 28px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 26px; 
+    margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width: 850px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (max-width: 460px) {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+`
+
+const NameRank = styled.div`
+  margin-left: 10px;
+
+  & span {
+    margin-right: 15px;
+  }
+`
+
+const UserName = styled.span`
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--orange);
+  }
+`
+
+export {
+  Container, 
+  View, 
+  PlayerHeader, 
+  PlayerName, 
+  ModeSelector, 
+  ModeOption, 
+  PlayerStats, 
+  PlayerHistory,
+  NameRank,
+  UserName
+}
